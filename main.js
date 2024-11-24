@@ -1,7 +1,8 @@
-document.getElementById('submit').addEventListener('click', function() {
+document.getElementById('submit').addEventListener('click', function(event) {
+    event.preventDefault()
     const email = document.getElementById('email').value;
   
-    // List of emails (this should ideally come from your server or an Excel file)
+    // List of emails 
     const validEmails1 = [
       "momo@unitedpharmacy.sa",
       "alaa@unitedpharmacy.sa",
@@ -15,9 +16,9 @@ document.getElementById('submit').addEventListener('click', function() {
   
     // Check if the entered email exists in the list of valid emails
     if (validEmails1.includes(email)) {
-      window.location.href = "https://unitedtalentacademy.moodlecloud.com"; // Redirect to Google
+      window.location.href = "https://unitedtalentacademy.moodlecloud.com/login/index.php?username="+email; // Redirect to Google
     } else if(validEmails2.includes(email)) {
-        window.location.href = "https://unitedpharmacyacademy.moodlecloud.com"; 
+        window.location.href = "https://unitedpharmacyacademy.moodlecloud.com/login/index.php?username="+email; 
     } 
     else {
       alert("Email is not correct"); // Show an alert if the email is not found
